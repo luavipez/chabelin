@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Lista de Productos</title>
+</head>
+<body>
+<h1>Lista de Productos</h1>
+<a href="/nuevo">Crear Nuevo Producto</a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${productos}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nombre}"></td>
+        <td th:text="${p.precio}"></td>
+        <td>
+           <!-- <img th:if="${producto.contenido != null}"
+                 th:src="'data:image/jpeg;base64,' + ${producto.imagenBase64}"
+                 alt="Imagen del producto" style="width: 100px; height: 100px;" />
+
+            <span th:if="${producto.contenido == null}">Sin imagen</span>-->
+
+            <img th:if="${p.rutaImage != null}" th:src="@{'/imgs/' + ${p.rutaImage}}" style="width: 100px; height: 100px;" alt="Imagen del producto"/>
+            <span th:if="${p.rutaImage == null}">Sin imagen</span>
+        </td>
+        <td>
+            <a th:href="@{/productos/editar/{id}(id=${p.id})}">Editar</a>
+            <a th:href="@{/productos/eliminar/{id}(id=${p.id})}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
