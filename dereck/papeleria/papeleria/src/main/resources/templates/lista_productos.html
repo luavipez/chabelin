@@ -5,7 +5,8 @@
 </head>
 <body>
 <h1>Lista de Productos</h1>
-<a href="/nuevo">Crear Nuevo Producto</a>
+<a href="/nuevo">Crear Nuevo Producto</a><br>
+<a href="/">Ver página principal</a>
 
 <table border="1">
     <thead>
@@ -33,8 +34,8 @@
             <span th:if="${p.rutaImage == null}">Sin imagen</span>
         </td>
         <td>
-            <a th:href="@{/productos/editar/{id}(id=${p.id})}">Editar</a>
-            <a th:href="@{/productos/eliminar/{id}(id=${p.id})}">Eliminar</a>
+            <a th:href="@{/editar/{id}(id=${p.id})}">Editar</a>
+            <a th:href="@{/eliminar/{id}(id=${p.id})}">Eliminar</a>
         </td>
     </tr>
     </tbody>

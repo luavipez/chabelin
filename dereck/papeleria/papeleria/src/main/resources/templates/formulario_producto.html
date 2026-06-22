@@ -6,7 +6,7 @@
 <body>
 <h1>Formulario de Producto</h1>
 
-<form th:action="@{/productos/guardar}" th:object="${producto}" method="post" enctype="multipart/form-data">
+<form th:action="@{/guardar}" th:object="${producto}" method="post" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
 
     <label>Nombre:</label>
@@ -20,6 +20,7 @@
     <button type="submit">Guardar</button>
 </form>
 
-<a href="/productos">Volver a la lista</a>
+<a href="/lista">Volver a la lista</a><br>
+<a href="/">Ver en página principal</a>
 </body>
 </html>

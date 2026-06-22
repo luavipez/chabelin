@@ -125,7 +125,7 @@ public class ProductoControlador {
         @GetMapping("/eliminar/{id}")
         public String eliminarProducto(@PathVariable Long id) {
             repositorio.deleteById(id);
-            return "redirect:/productos";
+            return "redirect:/lista";
         }
 
     }

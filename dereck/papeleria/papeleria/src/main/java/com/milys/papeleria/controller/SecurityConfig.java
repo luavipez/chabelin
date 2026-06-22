@@ -14,8 +14,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
-                .username("user")
-                .password("{bcrypt}$2a$12$8IVEULUevRQ8ed9Hdp1hFeUdH0OlfhVAZt/VLC1Vs7vUBwu1rM9wO")
+                .username(usuario)
+                .password(Contraseña)
                 .build();
         return new InMemoryUserDetailsManager(user);
     }
